@@ -36,9 +36,6 @@ A simple **Pokédex** built with **React**, **Vite**, and **Flowbite**. This app
 - 🔄 Implement pagination for a larger Pokémon list
 - 🎮 Add interactive animations for Pokémon cards
 
-## 📝 License
-This project is licensed under the **MIT License**.
-
 ## 💡 Author
 **Jibee (DarcMattz)**  
 🚀 GitHub: [DarcMattz](https://github.com/DarcMattz)
