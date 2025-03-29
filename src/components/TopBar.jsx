@@ -1,12 +1,4 @@
-import {
-  Button,
-  DarkThemeToggle,
-  Navbar,
-  NavbarBrand,
-  NavbarCollapse,
-  NavbarLink,
-  NavbarToggle,
-} from "flowbite-react";
+import { DarkThemeToggle, Navbar, NavbarBrand } from 'flowbite-react';
 
 export function TopBar() {
   return (
