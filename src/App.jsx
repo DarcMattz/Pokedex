@@ -1,13 +1,13 @@
-import { useState } from "react";
-import "./App.css";
 import Pokedex from "./Pokedex";
+import { TopBar } from "./components/TopBar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Pokedex />
+      <TopBar />
+      <main className="flex min-h-screen flex-col items-center justify-center bg-white px-4 pb-24 dark:bg-gray-900">
+        <Pokedex />
+      </main>
     </>
   );
 }
