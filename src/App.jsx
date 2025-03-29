@@ -15,7 +15,7 @@ function App() {
       </main>
       <div className="sticky z-10 bottom-10 right-10 w-min ml-auto">
         <div
-          className="bg-red-400 text-red-100 rounded-full cursor-pointer shadow-sm shadow-gray-400 flex items-center justify-center w-16 h-16"
+          className="bg-red-400 text-red-100 rounded-full cursor-pointer flex items-center justify-center w-16 h-16"
           onClick={scrollToTop}
         >
           <FaAnglesUp size={24} />
