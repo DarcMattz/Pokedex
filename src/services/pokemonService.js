@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchAllPokemon = async () => {
   try {
     const response = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=120"
+      "https://pokeapi.co/api/v2/pokemon?limit=1025"
     );
     return response.data.results;
   } catch (error) {
