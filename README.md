@@ -1,12 +1,45 @@
-# React + Vite
+# Pokédex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **Pokédex** built with **React**, **Vite**, and **Flowbite**. This app allows users to search for Pokémon by name or ID and view details such as their image, height, weight, and base experience.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- 🔍 Search for Pokémon by name or ID
+- 🖼️ Display official artwork of Pokémon
+- 📜 View a list of all 1025 Pokémon
+- 🌙 Dark mode support (Flowbite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- **Frontend:** React + Vite
+- **UI Components:** Flowbite (Tailwind CSS)
+- **Data Source:** [PokéAPI](https://pokeapi.co/)
+- **Icons:** React Icons (FaSearch)
 
-## Expanding the ESLint configuration
+## 📦 Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/DarcMattz/Pokedex.git
+   cd Pokedex
+   ```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+## 🌟 Future Enhancements
+- 📌 Add Pokémon types and abilities
+- 🔄 Implement pagination for a larger Pokémon list
+- 🎮 Add interactive animations for Pokémon cards
+
+## 📝 License
+This project is licensed under the **MIT License**.
+
+## 💡 Author
+**Jibee (DarcMattz)**  
+🚀 GitHub: [DarcMattz](https://github.com/DarcMattz)
+
