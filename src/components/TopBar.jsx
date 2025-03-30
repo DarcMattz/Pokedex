@@ -6,7 +6,7 @@ export function TopBar() {
       <NavbarBrand href="">
         <h1 className="text-3xl font-bold text-blue-600">Pokédex</h1>
       </NavbarBrand>
-      <DarkThemeToggle />
+      <DarkThemeToggle className="cursor-pointer" />
     </Navbar>
   );
 }
