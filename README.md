@@ -33,8 +33,7 @@ A simple **Pokédex** built with **React**, **Vite**, and **Flowbite**. This app
 
 ## 🌟 Future Enhancements
 - 📌 Add Pokémon types and abilities
-- 🔄 Implement pagination for a larger Pokémon list
-- 🎮 Add interactive animations for Pokémon cards
+- 🔄 Implement pagination for the Pokémon list
 
 ## 💡 Author
 **Jibee (DarcMattz)**  
