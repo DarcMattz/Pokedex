@@ -14,6 +14,7 @@ export default function Pokedex() {
   const [loading, setLoading] = useState(false);
   const [listLoading, setListLoading] = useState(true);
   const [weaknesses, setWeaknesses] = useState([]);
+  const [resistances, setResistances] = useState([]);
 
   useEffect(() => {
     const loadPokemonList = async () => {
@@ -29,7 +30,7 @@ export default function Pokedex() {
   }, [search]);
 
   useEffect(() => {
-    const fetchWeaknesses = async () => {
+    const fetchTypeEffectiveness = async () => {
       if (!pokemon) return;
 
       let typeMultipliers = {}; // Store multipliers for each type
@@ -52,15 +53,21 @@ export default function Pokedex() {
         });
       }
 
-      // Only keep weaknesses (multipliers > 1)
+      // Extract weaknesses (multiplier > 1)
       const calculatedWeaknesses = Object.entries(typeMultipliers)
         .filter(([_, multiplier]) => multiplier > 1)
         .map(([typeName]) => typeName);
 
+      // Extract resistances (multiplier < 1 but > 0)
+      const calculatedResistances = Object.entries(typeMultipliers)
+        .filter(([_, multiplier]) => multiplier < 1 && multiplier > 0)
+        .map(([typeName]) => typeName);
+
       setWeaknesses(calculatedWeaknesses);
+      setResistances(calculatedResistances);
     };
 
-    fetchWeaknesses();
+    fetchTypeEffectiveness();
   }, [pokemon]);
 
   return (
@@ -101,17 +108,28 @@ export default function Pokedex() {
             alt={pokemon.name}
             className="w-32 h-32 mx-auto my-1"
           />
-          {/* <div className="flex">
-            <p className=" flex-1 text-gray-700 dark:text-white">
-              Height: {pokemon.height}
-            </p>
-            <p className="flex-1 text-gray-700 dark:text-white">
-              Weight: {pokemon.weight}
-            </p>
-          </div> */}
 
+          {/* Resistances Section */}
           <div className="items-center text-center space-y-2 mt-4">
-            <p className="text-gray-700 dark:text-white">Weaknesses</p>
+            <p className="text-gray-700 dark:text-white">Resistant To</p>
+            <div className="flex gap-2 justify-center flex-wrap">
+              {resistances.length > 0 ? (
+                resistances.map((resistType) => (
+                  <span
+                    key={resistType}
+                    className="text-xs font-semibold px-2 py-1 rounded bg-green-100 text-green-600 dark:bg-green-600 dark:text-white"
+                  >
+                    {resistType}
+                  </span>
+                ))
+              ) : (
+                <p className="text-gray-500 dark:text-gray-400">None</p>
+              )}
+            </div>
+          </div>
+          {/* Weaknesses Section */}
+          <div className="items-center text-center space-y-2 mt-4">
+            <p className="text-gray-700 dark:text-white">Weak To</p>
             <div className="flex gap-2 justify-center flex-wrap">
               {weaknesses.length > 0 ? (
                 weaknesses.map((weakType) => (
