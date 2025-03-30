@@ -109,40 +109,48 @@ export default function Pokedex() {
             className="w-32 h-32 mx-auto my-1"
           />
 
-          {/* Resistances Section */}
-          <div className="items-center text-center space-y-2 mt-4">
-            <p className="text-gray-700 dark:text-white">Resistant To</p>
-            <div className="flex gap-2 justify-center flex-wrap">
-              {resistances.length > 0 ? (
-                resistances.map((resistType) => (
-                  <span
-                    key={resistType}
-                    className="text-xs font-semibold px-2 py-1 rounded bg-green-100 text-green-600 dark:bg-green-600 dark:text-white"
-                  >
-                    {resistType}
-                  </span>
-                ))
-              ) : (
-                <p className="text-gray-500 dark:text-gray-400">None</p>
-              )}
+          <div className="flex-col justify-between">
+            {/* Resistances Section */}
+            <div className="flex-1 items-center text-center space-y-2 mt-1">
+              <p className="text-gray-700 dark:text-white text-sm">
+                Resistant To
+              </p>
+              <div className="flex gap-2 justify-center flex-wrap px-2 py-1 bg-green-100 rounded dark:bg-green-600">
+                {resistances.length > 0 ? (
+                  resistances.map((resistType) => (
+                    <span
+                      key={resistType}
+                      className="text-xs font-semibold  text-green-600 dark:text-white"
+                    >
+                      {resistType}
+                    </span>
+                  ))
+                ) : (
+                  <p className="text-gray-500 dark:text-gray-400 text-xs">
+                    None
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-          {/* Weaknesses Section */}
-          <div className="items-center text-center space-y-2 mt-4">
-            <p className="text-gray-700 dark:text-white">Weak To</p>
-            <div className="flex gap-2 justify-center flex-wrap">
-              {weaknesses.length > 0 ? (
-                weaknesses.map((weakType) => (
-                  <span
-                    key={weakType}
-                    className="text-xs font-semibold px-2 py-1 rounded bg-red-100 text-red-600 dark:bg-red-600 dark:text-white"
-                  >
-                    {weakType}
-                  </span>
-                ))
-              ) : (
-                <p className="text-gray-500 dark:text-gray-400">Loading...</p>
-              )}
+            {/* Weaknesses Section */}
+            <div className="flex-1 items-center text-center space-y-2 mt-4">
+              <p className="text-gray-700 dark:text-white text-sm">Weak To</p>
+              <div className="flex gap-2 justify-center flex-wrap dark:bg-red-600 rounded bg-red-100">
+                {weaknesses.length > 0 ? (
+                  weaknesses.map((weakType) => (
+                    <span
+                      key={weakType}
+                      className="text-xs font-semibold px-2 py-1 text-red-600 dark:text-white"
+                    >
+                      {weakType}
+                    </span>
+                  ))
+                ) : (
+                  <p className="text-gray-500 dark:text-gray-400 text-xs">
+                    Loading...
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </Card>
