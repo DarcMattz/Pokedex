@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, Spinner } from "flowbite-react";
+import { BsStars } from "react-icons/bs";
 import {
   fetchAllPokemon,
   fetchPokemonDetails,
@@ -15,6 +16,7 @@ export default function Pokedex() {
   const [listLoading, setListLoading] = useState(true);
   const [weaknesses, setWeaknesses] = useState([]);
   const [resistances, setResistances] = useState([]);
+  const [isShiny, setIsShiny] = useState(false);
 
   useEffect(() => {
     const loadPokemonList = async () => {
@@ -26,6 +28,7 @@ export default function Pokedex() {
   }, []);
 
   useEffect(() => {
+    setIsShiny(false);
     if (search) fetchPokemonDetails(search, setLoading, setError, setPokemon);
   }, [search]);
 
@@ -104,11 +107,20 @@ export default function Pokedex() {
             {pokemon.name}
           </h2>
           <img
-            src={pokemon.sprites.other["official-artwork"].front_default}
+            src={
+              isShiny
+                ? pokemon.sprites.other["official-artwork"].front_shiny
+                : pokemon.sprites.other["official-artwork"].front_default
+            }
             alt={pokemon.name}
             className="w-32 h-32 mx-auto my-1"
           />
-
+          <div
+            onClick={() => setIsShiny(!isShiny)}
+            className="absolute cursor-pointer hover:bg-gray-100 rounded-3xl p-1 text-amber-400"
+          >
+            <BsStars />
+          </div>
           <div className="flex-col justify-between">
             {/* Resistances Section */}
             <div className="flex-1 items-center text-center space-y-2 mt-1">
